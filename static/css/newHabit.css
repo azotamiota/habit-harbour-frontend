@@ -141,24 +141,6 @@ input[type=range]::-webkit-slider-thumb {
 
 }
 
-.slider::after {
-    content: "7";
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    left: 80%;
-    top: 26%
-}
-
-.slider::before {
-    content: "0";
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    left: 12%;
-    top: 26%
-}
-
 #slideValue {
     margin-top: 1px;
     margin-bottom: 40px;;
