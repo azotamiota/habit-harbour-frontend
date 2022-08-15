@@ -17,23 +17,26 @@
     <div class="popup">
         <div class ="close-btn">&times;</div>
         <div class="form">
+            <form method="GET">
             <h2>Log in</h2>
             <div class="form-element">
                 <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Enter username">
+                <input type="text" id="username" name="username" placeholder="Enter username">
             </div>
             <div class="form-element">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter password">
+                <input type="password" id="password" name="password" placeholder="Enter password">
             </div>
             <div class="form-element">
                 <button>Sign in</button>
             </div>
         </div>
     </div>
+            </form>
     <div class="popup-reg">
         <div class ="close-btn">&times;</div>
         <div class="form">
+            <form method="POST">
             <h2>Please register</h2>
             <div class="form-element">
                 <label for="username">Username</label>
@@ -48,5 +51,6 @@
             </div>
         </div>
     </div>
+            </form>
 </body>
 </html>
