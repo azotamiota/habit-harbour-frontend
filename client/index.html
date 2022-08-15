@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <script src="./static/js/index.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Montserrat:wght@300&family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>Your habits</title>
+</head>
+<body>
+<!-- SIDE BAR -->
+    <div class="sidebar" style="width: 25px;">
+        <div class="wrapper">
+            <button onclick="swapNav()" id="closeNav"><box-icon id="navBtn" name='menu' ></box-icon></button>
+            <div class="logo">
+                <span>
+                        <img id="logo" src="./assets/Habbit Harbour-1 (2).png" alt="Logo">
+                </span>
+            </div>
+           <button onclick="window.location.href='./newHabit.html';" id="newHabit">Start a new habit</button>
+           <button id="myHabitBtn">View my habits</button>
+            
+        </div>
+    </div>
+    <!-- CONTENT -->
+    <main> 
+        <h1>Welcome to Habit Harbour</h1>
+        <div class="divider"></div>
+        <h2> To begin your journey please use the navigation bar to track a new habit or check your progress on a current habit.</h2>
+        <div class="divider"></div>
+        <h3>Why habit track?</h3>
+        <p>Habit tracking naturally builds a series of visual cues. When you look at the calendar and see your streak, you’ll be reminded to act again.
+        
+        Research has shown that people who track their progress on goals like losing weight, quitting smoking, and lowering blood pressure are all more likely to improve than those who don’t. One study of more than sixteen hundred people found that those who kept a daily food log lost twice as much weight as those who did not. A habit tracker is a simple way to log your behavior, and the mere act of tracking a behavior can spark the urge to change it.</p>
+    </main>
+    </body>
+    </html>
