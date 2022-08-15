@@ -2,6 +2,9 @@
     margin:0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Lobster Two', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 /* Styling for navbar */
@@ -126,3 +129,5 @@ h3 {
     padding: 5px;
     text-decoration: underline;
 }
+
+

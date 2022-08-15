@@ -5,10 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./static/css/newHabit.css">
-    <script src="./static/js/newHabit..js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Montserrat:wght@300&family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
     <title>New habit</title>
 </head>
 <body>
+    <!-- SIDE BAR -->
+    <div class="sidebar" style="width: 25px;">
+        <div class="wrapper">
+            <button onclick="swapNav()" id="closeNav"><box-icon id="navBtn" name='menu' ></box-icon></button>
+            <div class="logo">
+                <span>
+                    <a href="./index.html">
+                    <img id="logo" src="./assets/Habbit Harbour-1 (2).png" alt="Logo">
+                </a>
+                </span>
+            </div>
+           <button onclick="window.location.href='./newHabit.html';" id="newHabit">Start a new habit</button>
+           <button id="myHabitBtn">View my habits</button>
+           
+        </div>
+    </div>
+    <!-- CONTENT -->
+    <main>
+        <h1>Track a new habit</h1>
+        <div id="formWrapper"> 
+        <form id="trackHabit" method="POST">
+            <select id="habit" name="habit">
+                <option value="water">Water</option>
+                <option value="exercise">Exercise</option>
+            </select>
+            <input type="text" name="target" id="target" placeholder="Your target e.g 2 litres a day">
+            <div class="slideCont">
+                <label for="days">Days per week:</label>
+                <input type="range" min="1" max="7" id="myRange" name="days" class="slider">
+                <p id="slideValue">Days: <span id="value"></span></p>
+            </div>
+           <button type="submit" value="Start tracking" id="habitSub">Start tracking</button>
+        </form>
+        </div>
+    </main>
     
+    <script src="./static/js/newHabit.js"></script>
 </body>
 </html>
