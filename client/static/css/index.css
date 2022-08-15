@@ -95,3 +95,30 @@ main {
     margin-left: 250px;
     transition: margin-left .5s;
 }
+
+h1 {
+    color: #fff;
+    padding: 5px;
+}
+
+.divider {
+   border:1px solid gray;
+   margin: 20px 0px;
+   width: 80%; 
+}
+
+h2 {
+    color: #fff;
+    padding: 5px;
+}
+
+p {
+    color: #fff;
+    padding: 5px;
+}
+
+h3 {
+    color: #fff;
+    padding: 5px;
+    text-decoration: underline;
+}
