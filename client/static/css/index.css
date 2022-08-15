@@ -6,7 +6,7 @@
 
 /* Styling for navbar */
 .sidebar {
-    position: sticky;
+    position: fixed;
     top: 0px;
     left: 0px;
     width: 250px;
@@ -81,4 +81,17 @@ li {
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+/* Page styling */
+
+body {
+    background-color: #373A36;
+    transition: margin-left .5s;
+}
+
+main {
+    position:relative;
+    margin-left: 250px;
+    transition: margin-left .5s;
 }
