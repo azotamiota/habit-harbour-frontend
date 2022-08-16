@@ -30,9 +30,16 @@ function login (data) {
         body: JSON.stringify(data)
     }
 
-    fetch("https://habit-harbour.herokuapp.com/login", options)
+    fetch("http://localhost:3000/login", options)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if (data["success"]) {
+                localStorage.setItem("token", data["token"]);
+                window.location.assign("/");
+            } else {
+                throw "Unable to authenticate!"
+            }
+        })
         .catch(err => alert ("Login failed!"))
 }
 

@@ -1,3 +1,9 @@
+const modal = document.querySelector("#modal")
+
+
+
+
+
 function swapNav() {
     const navBar = document.querySelector(".sidebar");
     const main = document.querySelector("main");
@@ -9,4 +15,10 @@ function swapNav() {
         navBar.style.width = "250px";
         main.style.marginLeft= "250px";
     }
+}
+
+
+const loadHabit = () => {
+
+    const container = document.querySelector("")
 }
