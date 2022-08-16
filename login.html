@@ -20,7 +20,7 @@
     <div class="popup">
         <div class ="close-btn">&times;</div>
         <div class="form">
-            <form method="GET">
+            <form id="loginForm" >
             <h2>Log in</h2>
             <div class="form-element">
                 <label for="username">Username</label>
@@ -31,27 +31,28 @@
                 <input type="password" id="password" name="password" placeholder="Enter password">
             </div>
             <div class="form-element">
-                <button>Sign in</button>
+                <button type="submit">Sign in</button>
             </div>
         </div>
     </div>
             </form>
+
     <div class="popup-reg">
         <div class ="close-btn">&times;</div>
         <div class="form">
-            <form method="POST">
-            <h2>Please register</h2>
-            <div class="form-element">
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Enter username">
-            </div>
-            <div class="form-element">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter password">
-            </div>
-            <div class="form-element">
-                <button>Submit</button>
-            </div>
+            <form id="registerForm">
+                <h2>Please register</h2>
+                <div class="form-element">
+                    <label for="username2">Username</label>
+                    <input type="text" id="username" name="username2" placeholder="Enter username">
+                </div>
+                <div class="form-element">
+                    <label for="password2">Password</label>
+                    <input type="password" id="password" name="password2" placeholder="Enter password">
+                </div>
+                <div class="form-element">
+                    <button type="submit">Submit</button>
+                </div>
         </div>
     </div>
             </form>
