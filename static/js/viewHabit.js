@@ -1,8 +1,8 @@
-const modal = document.querySelector("#modal")
-
-
-
-
+const modal = document.querySelector("#modal");
+const modalTitle = document.querySelector("#hbtTitle");
+const modalTarget = document.querySelector("#hbtTarget");
+const modalFrequency = document.querySelector("#hbtFreq");
+const modalStreak = document.querySelector("#hbtStreak");
 
 function swapNav() {
     const navBar = document.querySelector(".sidebar");
@@ -18,7 +18,30 @@ function swapNav() {
 }
 
 
-const loadHabit = () => {
+const loadWaterHabit = () => {
+    const tokenData = jwt_decode(localStorage.getItem("token"));
+    const user = tokenData.username;
+    fetch(`http://localhost:3000/dashboard/${user}`)
+        .then(res => res.json())
+        .then(data => {
+            modalTitle.textContent = "Water";
+            modalTarget.textContent = `My current target : ${data.user.habits.waterTarget}`;
+            modalFrequency.textContent = `Days per week : ${data.user.habits.waterDays}`;
+            modalStreak.textContent = `My current streak: ${data.user.habits.waterStreak}`;
+            modal.style.display = "block"
+        })
+};
 
-    const container = document.querySelector("")
-}
+const loadExerciseHabit = () => {
+    const tokenData = jwt_decode(localStorage.getItem("token"));
+    const user = tokenData.username;
+    fetch(`http://localhost:3000/dashboard/${user}`)
+        .then(res => res.json())
+        .then(data => {
+            modalTitle.textContent = "Exercise";
+            modalTarget.textContent = `My current target : ${data.user.habits.exerciseTarget}`;
+            modalFrequency.textContent = `Days per week : ${data.user.habits.exerciseDays}`;
+            modalStreak.textContent = `My current streak : ${data.user.habits.exerciseStreak}`;
+            modal.style.display = "block"
+        })
+};
