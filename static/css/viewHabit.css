@@ -39,7 +39,7 @@
     display: flex;
     align-items: center;
     margin: 8px 0px;
-    margin-left: 3em;
+    margin-left: 1.5em;
     padding: 15px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -51,7 +51,7 @@
     font-size: 16px;
     font-weight: 600;
     transition: all 250ms;
-    width: 170px;
+    width: 200px;
     height: 50px;
     text-align: center !important;
     line-height: 50px;
@@ -104,30 +104,17 @@ main {
 }
 
 h1 {
-    color: #fff;
     padding: 5px;
-}
-
-.divider {
-   border:1px solid gray;
-   margin: 20px 0px;
-   width: 80%; 
-}
-
-h2 {
     color: #fff;
-    padding: 5px;
 }
 
-p {
-    color: #fff;
-    padding: 5px;
+#waterBtn, #exerciseBtn {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: #e6e6e6;
+    border: 2px solid #E74E35;
+    cursor: pointer;
+    display: inline-block;
+    margin: 30px;
 }
-
-h3 {
-    color: #fff;
-    padding: 5px;
-    text-decoration: underline;
-}
-
-
