@@ -1,133 +1,210 @@
 * {
-    margin:0px;
+    margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
+    box-sizing:border-box;
     font-family: 'Lobster Two', cursive;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Noto Sans', sans-serif;
 }
 
-/* Styling for navbar */
-.sidebar {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 250px;
+body {
+    background:#E74E35;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     height: 100vh;
-    background: #E74E35;
-    overflow: hidden;
-    transition: all 300ms ease-in-out;
-}
-
-.sidebar.close {
-    width: 25px;
-}
-
-.sidebar .wrapper {
-    width: 250px;
-    height: 100%;
 }
 
 #logo {
-    width: 250px;
-    height: 250px;
-    margin-bottom: 20px;
-    padding: 20px 0px
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 45%;
+    max-height: 400px;
+    max-width: 400px;
 }
 
-#newHabit, #myHabitBtn {
+.center {
+    /* position: absolute;
+    top: 50%;
+    left: 50%; */
     display: flex;
-    align-items: center;
-    margin: 8px 0px;
-    margin-left: 1.5em;
-    padding: 15px;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 25px;
-    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
-    box-sizing: border-box;
-    color: #0f1111;
-    cursor: pointer;
-    font-size: 16px;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.center button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 15px;
     font-weight: 600;
-    transition: all 250ms;
-    width: 200px;
-    height: 50px;
-    text-align: center !important;
-    line-height: 50px;
-   
-}
-
-#newHabit:hover {
-    transform: translateY(-2px);
-}
-
-#yourHabits {
-    font-size: 2em;
-    color:#fff;
-    margin-left: 1.5em;
-    margin-top: 2em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-decoration: underline;
-
-}
-
-li {
-    color: #fff;
-    font-size: 1.5em;
-    margin: 20px;
-    margin-left: 2.5em;
-
-}
-
-#closeNav {
-    position: absolute;
-    top: 2%;
-    right: 0;
-    transform: translateY(-50%);
-    background-color: transparent;
+    background: #f5f5f5;
     border: none;
+    outline: none;
+    cursor:pointer;
+    border-radius: 5px;
+}
+
+/* Login popup styling */
+
+.popup {
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 75%;
+    max-width: 380px;
+    padding: 20px 30px;
+    background: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
+    border-radius:10px;
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms;
+
+}
+
+.popup.active {
+    top: 50%;
+    opacity:1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: top 0ms ease-in-out 200ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 200ms ease-in-out 0ms;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top:10px;
+    right: 10px;
+    width:15px;
+    height:15px;
+    background:#888;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
     cursor: pointer;
 }
 
-/* Page styling */
-
-body {
-    background-color: #373A36;
-    transition: margin-left .5s;
+.popup .form h2 {
+    text-align: center;
+    margin: 10px 0px 20px;
+    font-size: 25px;
 }
 
-main {
-    position:relative;
-    margin-left: 30px;
-    transition: margin-left .5s;
+.popup .form .form-element {
+    margin: 15px 0px;
+    
 }
 
-h1 {
-    color: #fff;
-    padding: 5px;
+.popup .form .form-element label {
+    font-size: 14px;
+    
 }
 
-.divider {
-   border:1px solid gray;
-   margin: 20px 0px;
-   width: 80%; 
+.popup .form .form-element input[type="text"],
+.popup .form .form-element input[type="password"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
 }
 
-h2 {
-    color: #fff;
-    padding: 5px;
-}
+.popup .form .form-element button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
 
-p {
-    color: #fff;
-    padding: 5px;
-}
-
-h3 {
-    color: #fff;
-    padding: 5px;
-    text-decoration: underline;
 }
 
 
+/* Register popup styling */
+
+.popup-reg {
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 75%;
+    max-width: 380px;
+    padding: 20px 30px;
+    background: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
+    border-radius:10px;
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms;
+
+}
+
+.popup-reg.active {
+    top: 50%;
+    opacity:1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: top 0ms ease-in-out 200ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 200ms ease-in-out 0ms;
+}
+
+.popup-reg .close-btn {
+    position: absolute;
+    top:10px;
+    right: 10px;
+    width:15px;
+    height:15px;
+    background:#888;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.popup-reg .form h2 {
+    text-align: center;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+}
+
+.popup-reg .form .form-element {
+    margin: 15px 0px;
+    
+}
+
+.popup-reg .form .form-element label {
+    font-size: 14px;
+    
+}
+
+.popup-reg .form .form-element input[type="text"],
+.popup-reg .form .form-element input[type="password"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.popup-reg .form .form-element button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+
+}

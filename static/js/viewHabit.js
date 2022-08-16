@@ -21,14 +21,15 @@ function swapNav() {
 const loadWaterHabit = () => {
     const tokenData = jwt_decode(localStorage.getItem("token"));
     const user = tokenData.username;
+
     fetch(`http://localhost:3000/dashboard/${user}`)
         .then(res => res.json())
         .then(data => {
-            modalTitle.textContent = "Water";
-            modalTarget.textContent = `My current target : ${data.user.habits.waterTarget}`;
-            modalFrequency.textContent = `Days per week : ${data.user.habits.waterDays}`;
-            modalStreak.textContent = `My current streak: ${data.user.habits.waterStreak}`;
-            modal.style.display = "block"
+                modalTitle.textContent = "Water";
+                modalTarget.textContent = `My current target : ${data.user.habits.waterTarget}`;
+                modalFrequency.textContent = `Days per week : ${data.user.habits.waterDays}`;
+                modalStreak.textContent = `My current streak: ${data.user.habits.waterStreak}`;
+                modal.style.display = "block"
         })
 };
 

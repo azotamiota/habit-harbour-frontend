@@ -1,0 +1,133 @@
+* {
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Lobster Two', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+/* Styling for navbar */
+.sidebar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 250px;
+    height: 100vh;
+    background: #E74E35;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+}
+
+.sidebar.close {
+    width: 25px;
+}
+
+.sidebar .wrapper {
+    width: 250px;
+    height: 100%;
+}
+
+#logo {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+    padding: 20px 0px
+}
+
+#newHabit, #myHabitBtn {
+    display: flex;
+    align-items: center;
+    margin: 8px 0px;
+    margin-left: 1.5em;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 250ms;
+    width: 200px;
+    height: 50px;
+    text-align: center !important;
+    line-height: 50px;
+   
+}
+
+#newHabit:hover {
+    transform: translateY(-2px);
+}
+
+#yourHabits {
+    font-size: 2em;
+    color:#fff;
+    margin-left: 1.5em;
+    margin-top: 2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: underline;
+
+}
+
+li {
+    color: #fff;
+    font-size: 1.5em;
+    margin: 20px;
+    margin-left: 2.5em;
+
+}
+
+#closeNav {
+    position: absolute;
+    top: 2%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Page styling */
+
+body {
+    background-color: #373A36;
+    transition: margin-left .5s;
+}
+
+main {
+    position:relative;
+    margin-left: 30px;
+    transition: margin-left .5s;
+}
+
+h1 {
+    color: #fff;
+    padding: 5px;
+}
+
+.divider {
+   border:1px solid gray;
+   margin: 20px 0px;
+   width: 80%; 
+}
+
+h2 {
+    color: #fff;
+    padding: 5px;
+}
+
+p {
+    color: #fff;
+    padding: 5px;
+}
+
+h3 {
+    color: #fff;
+    padding: 5px;
+    text-decoration: underline;
+}
+
+

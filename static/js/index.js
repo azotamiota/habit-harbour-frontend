@@ -1,23 +1,76 @@
-function swapNav() {
-    const navBar = document.querySelector(".sidebar");
-    const main = document.querySelector("main");
-    if (navBar.style.width === "250px") {
-        navBar.style.width = "25px";
-        main.style.marginLeft = "30px";
+//Function to show login popup
+document.getElementById("show-login").addEventListener("click",function () {
+    document.querySelector(".popup").classList.add("active");
+});
 
-    } else {
-        navBar.style.width = "250px";
-        main.style.marginLeft= "250px";
+//Function to close login popup
+document.querySelector(".popup .close-btn").addEventListener("click", function () {
+    document.querySelector(".popup").classList.remove("active");
+})
+
+//Function to show registerpopup
+document.getElementById("show-register").addEventListener("click",function () {
+    document.querySelector(".popup-reg").classList.add("active");
+});
+
+//Function to close login popup
+document.querySelector(".popup-reg .close-btn").addEventListener("click", function () {
+    document.querySelector(".popup-reg").classList.remove("active");
+})
+
+//handing login function
+function login (data) {
+    
+    const options = {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
     }
+
+    fetch("http://localhost:3000/login", options)
+        .then(res => res.json())
+        .then(data => {
+            if (data["success"]) {
+                localStorage.setItem("token", data["token"]);
+                window.location.assign("/home.html");
+            } else {
+                throw "Unable to authenticate!"
+            }
+        })
+        .catch(err => alert ("Login failed!"))
 }
 
+function register (data) {
+    console.log("register", data)
+}
 
-// //Function to show login popup
-// document.getElementById("closeNav").addEventListener("click",function () {
-//     document.querySelector(".sidebar").classList.add("active");
-// });
+document.querySelector("#loginForm").addEventListener("submit", (e) => {
+    e.preventDefault();
 
-// //Function to close login popup
-// document.querySelector(".popup .close-btn").addEventListener("click", function () {
-//     document.querySelector(".popup").classList.remove("active");
-// })
+    const form = new FormData(e.target);
+
+    login({
+        username: form.get("username"),
+        password: form.get("password")
+    })
+
+    e.target.reset();
+})
+
+document.querySelector("#registerForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const form = new FormData(e.target);
+
+    register({
+        username: form.get("username2"),
+        password: form.get("password2")
+    })
+
+    e.target.reset();
+})
+
+
