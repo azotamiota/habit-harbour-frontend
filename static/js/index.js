@@ -33,6 +33,7 @@ function login (data) {
     }
 
     fetch("https://habit-harbour.herokuapp.com/login", options)
+    // fetch("http://localhost:3000/login", options)
         .then(res => res.json())
         .then(data => {
             if (data["success"]) {
@@ -59,6 +60,7 @@ function register (data) {
     }
 
     fetch("https://habit-harbour.herokuapp.com/register", options)
+    // fetch("http://localhost:3000/register", options)
         .then(res => res.json())
         .then(data => {
             if (data["username"]) {
