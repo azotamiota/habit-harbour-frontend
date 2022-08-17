@@ -8,7 +8,7 @@ const buttonForm = document.querySelector('#button-form');
 
 const completedButton = document.createElement('input')
 completedButton.setAttribute('type', 'submit');
-completedButton.setAttribute('value', 'Completed');
+completedButton.setAttribute('value', 'Target completed!');
 completedButton.setAttribute('id', 'completed-button');
 
 function swapNav() {
@@ -77,17 +77,22 @@ const loadButton = (user) => {
         if (currentHabit == 'water') {
             
             if (data.waterCompleted) {
-                completedButton.disabled = true;  
+                completedButton.disabled = true;
+                completedButton.setAttribute('value', 'Come back tomorrow!');
+
             } else {
-                completedButton.disabled = false;  
+                completedButton.disabled = false;
+                completedButton.setAttribute('value', 'Target completed!');
             }
 
         } else if (currentHabit == 'exercise') {
            
             if (data.exerciseCompleted) {
-                completedButton.disabled = true;  
+                completedButton.disabled = true;
+                completedButton.setAttribute('value', 'Come back tomorrow!');
             } else {
-                completedButton.disabled = false;  
+                completedButton.disabled = false;
+                completedButton.setAttribute('value', 'Target completed!');
             }
 
         }
@@ -132,6 +137,7 @@ const updateChangesAtFrontend = () => {
 
     const currentStreak = Number(modalStreak.textContent.split(': ')[1])
     modalStreak.textContent = `My current streak : ${currentStreak + 1}`
+    completedButton.setAttribute('value', 'Come back tomorrow!');
     completedButton.disabled = true;
 }
 
