@@ -52,7 +52,6 @@ const loadExerciseHabit = () => {
     const user = tokenData.username;
 
     fetch(`https://habit-harbour.herokuapp.com/dashboard/${user}`)
-    // fetch(`http://localhost:3000/dashboard/${user}`)
         .then(res => res.json())
         .then(data => {
             modalTitle.textContent = "Exercise";
@@ -70,7 +69,6 @@ const loadExerciseHabit = () => {
 const loadButton = (user) => {
     
     fetch(`https://habit-harbour.herokuapp.com/dashboard/${user}/habits`)
-    // fetch(`http://localhost:3000/dashboard/${user}/habits`)
     .then(res => res.json())
     .then(data => {
         const currentHabit = document.querySelector('#hbtTitle').textContent.toLowerCase();
@@ -124,7 +122,6 @@ const completeTarget = () => {
     }
     
     fetch(`https://habit-harbour.herokuapp.com/dashboard/${user}/habits/increment-streak`, options)
-    // fetch(`http://localhost:3000/dashboard/${user}/habits/increment-streak`, options)
         
 }
 
