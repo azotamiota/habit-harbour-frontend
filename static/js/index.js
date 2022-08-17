@@ -98,3 +98,7 @@ document.querySelector("#registerForm").addEventListener("submit", (e) => {
 })
 
 
+module.exports = {
+    login: login,
+    register: register
+}
