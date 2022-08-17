@@ -44,7 +44,7 @@ function trackNewHabit (data) {
         body: JSON.stringify(data)
     }
 
-    fetch(`http://localhost:3000/dashboard/${user}/habits`, options)
+    fetch(`https://habit-harbour.herokuapp.com/dashboard/${user}/habits`, options)
         .then(window.location.assign("/viewHabit.html"));
 }
 

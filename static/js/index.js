@@ -25,12 +25,14 @@ function login (data) {
         method: "POST",
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'alg': '2B',
+            'typ': 'JWT'
         },
         body: JSON.stringify(data)
     }
 
-    fetch("http://localhost:3000/login", options)
+    fetch("https://habit-harbour.herokuapp.com/login", options)
         .then(res => res.json())
         .then(data => {
             if (data["success"]) {
@@ -51,15 +53,14 @@ function register (data) {
         method: "POST",
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(data)
     }
 
-    fetch("http://localhost:3000/register", options)
+    fetch("https://habit-harbour.herokuapp.com/register", options)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             if (data["username"]) {
                 alert("Registration successful, please login")
                 window.location.assign("/index.html");
