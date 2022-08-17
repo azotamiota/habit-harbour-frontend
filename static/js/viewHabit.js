@@ -45,6 +45,7 @@ const loadWaterHabit = () => {
 const loadExerciseHabit = () => {
     const tokenData = jwt_decode(localStorage.getItem("token"));
     const user = tokenData.username;
+
     fetch(`https://habit-harbour.herokuapp.com/dashboard/${user}`)
         .then(res => res.json())
         .then(data => {
@@ -58,9 +59,8 @@ const loadExerciseHabit = () => {
 };
 
 const loadButton = (user) => {
-    console.log('Im within loadButton')
     
-    fetch(`http://localhost:3000/dashboard/${user}/habits`)
+    fetch(`https://habit-harbour.herokuapp.com/dashboard/${user}/habits`)
     .then(res => res.json())
     .then(data => {
         const currentHabit = document.querySelector('#hbtTitle').textContent.toLowerCase();
@@ -71,6 +71,7 @@ const loadButton = (user) => {
             } else {
                 completedButton.disabled = false;  
             }
+
         } else if (currentHabit == 'exercise') {
 
             if (data.exerciseCompleted) {
@@ -82,6 +83,7 @@ const loadButton = (user) => {
         }
 
     })
+
     buttonForm.appendChild(completedButton)
     
 }
@@ -92,6 +94,7 @@ const completeTarget = () => {
     const user = tokenData.username;
 
     const currentHabit = document.querySelector('#hbtTitle').textContent.toLowerCase();
+    
     const options = {
         method: 'POST', 
         mode: 'cors', 
@@ -106,7 +109,7 @@ const completeTarget = () => {
         }) 
     }
     
-    fetch(`http://localhost:3000/dashboard/${user}/habits/increment-streak`, options)
+    fetch(`https://habit-harbour.herokuapp.com/dashboard/${user}/habits/increment-streak`, options)
         
 }
 
