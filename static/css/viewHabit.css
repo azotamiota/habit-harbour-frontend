@@ -125,3 +125,45 @@ h1 {
 
 }
 
+#hbtTitle {
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+#hbtTarget {
+    margin-bottom: 5px;
+}
+
+#hbtFreq {
+    margin-bottom: 5px;
+}
+
+#hbtStreak {
+    margin-bottom: 5px;
+}
+
+
+
+
+#completed-button {
+    margin-top: 20px;;
+    margin-left: 20px;
+    width: 90%;
+    border-radius: 25px;
+    height:40px;
+    background-color:limegreen;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#completed-button:disabled {
+    margin-left: 20px;
+    width: 90%;
+    border-radius: 25px;
+    height:40px;
+    background-color: #e74e35;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
