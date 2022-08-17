@@ -18,7 +18,7 @@ document.querySelector(".popup-reg .close-btn").addEventListener("click", functi
     document.querySelector(".popup-reg").classList.remove("active");
 })
 
-//handing login function
+//handling login function
 function login (data) {
     
     const options = {
@@ -43,8 +43,31 @@ function login (data) {
         .catch(err => alert ("Login failed!"))
 }
 
+
+//handling register function
 function register (data) {
-    console.log("register", data)
+    
+    const options = {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }
+
+    fetch("http://localhost:3000/register", options)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data["username"]) {
+                alert("Registration successful, please login")
+                window.location.assign("/index.html");
+            } else {
+                alert("Registration unsuccessful, please try again later")
+                throw "Unable to register!"
+            }
+        });
 }
 
 document.querySelector("#loginForm").addEventListener("submit", (e) => {
