@@ -41,7 +41,6 @@ const loadWaterHabit = () => {
         })
         .then(
             () => {
-            console.log('SOMETHING!');
             loadButton(user)
         }
         )
@@ -63,7 +62,6 @@ const loadExerciseHabit = () => {
             modal.style.display = "block"
         })
         .then(() => {
-            console.log('SOMETHING!');
             loadButton(user)
         }
         )
@@ -77,8 +75,7 @@ const loadButton = (user) => {
     .then(data => {
         const currentHabit = document.querySelector('#hbtTitle').textContent.toLowerCase();
         if (currentHabit == 'water') {
-            console.log('data.waterCompleted on loading it: ', data.waterCompleted)
-            console.log('data.exerciseCompleted on loading it: ', data.exerciseCompleted)
+            
             if (data.waterCompleted) {
                 completedButton.disabled = true;  
             } else {
@@ -86,8 +83,7 @@ const loadButton = (user) => {
             }
 
         } else if (currentHabit == 'exercise') {
-            console.log('data.waterCompleted on loading it: ', data.waterCompleted)
-            console.log('data.exerciseCompleted on loading it: ', data.exerciseCompleted)
+           
             if (data.exerciseCompleted) {
                 completedButton.disabled = true;  
             } else {
