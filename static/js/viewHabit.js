@@ -153,8 +153,7 @@ const updateChangesAtFrontend = () => {
     completedButton.disabled = true;
 }
 
-<<<<<<< HEAD
-=======
+
 completedButton.addEventListener('click', (e) => {
     e.preventDefault();
     completeTarget();
@@ -162,7 +161,7 @@ completedButton.addEventListener('click', (e) => {
     insertTimeToMidnight();
 
 }) 
->>>>>>> main
+
 
 function changeTitle() {
     const tokenData = jwt_decode(localStorage.getItem("token"));
@@ -173,7 +172,6 @@ function changeTitle() {
 changeTitle();
 
 
-<<<<<<< HEAD
 
 
 completedButton.addEventListener('click', (e) => {
@@ -183,7 +181,7 @@ completedButton.addEventListener('click', (e) => {
     insertTimeToMidnight();
 
 }) 
-=======
+
 const insertTimeToMidnight = () => {
     const currentHabit = document.querySelector('#hbtTitle').textContent.toLowerCase();
 
@@ -253,4 +251,3 @@ const insertTimeToMidnight = () => {
     }, 1000)
 
 }
->>>>>>> main
