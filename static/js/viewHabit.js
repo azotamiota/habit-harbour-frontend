@@ -1,3 +1,4 @@
+const {timeToMidnight} = require('./countdown');
 const modal = document.querySelector("#modal");
 const modalTitle = document.querySelector("#hbtTitle");
 const modalTarget = document.querySelector("#hbtTarget");
@@ -152,6 +153,7 @@ const updateChangesAtFrontend = () => {
     completedButton.disabled = true;
 }
 
+
 completedButton.addEventListener('click', (e) => {
     e.preventDefault();
     completeTarget();
@@ -159,6 +161,7 @@ completedButton.addEventListener('click', (e) => {
     insertTimeToMidnight();
 
 }) 
+
 
 function changeTitle() {
     const tokenData = jwt_decode(localStorage.getItem("token"));
@@ -168,6 +171,16 @@ function changeTitle() {
 
 changeTitle();
 
+
+
+
+completedButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    completeTarget();
+    updateChangesAtFrontend();
+    insertTimeToMidnight();
+
+}) 
 
 const insertTimeToMidnight = () => {
     const currentHabit = document.querySelector('#hbtTitle').textContent.toLowerCase();
