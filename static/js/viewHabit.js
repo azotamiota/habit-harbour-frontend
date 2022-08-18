@@ -1,3 +1,4 @@
+const {timeToMidnight} = require('./countdown');
 const modal = document.querySelector("#modal");
 const modalTitle = document.querySelector("#hbtTitle");
 const modalTarget = document.querySelector("#hbtTarget");
@@ -139,12 +140,6 @@ const updateChangesAtFrontend = () => {
     completedButton.disabled = true;
 }
 
-completedButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    completeTarget();
-    updateChangesAtFrontend();
-
-}) 
 
 function changeTitle() {
     const tokenData = jwt_decode(localStorage.getItem("token"));
@@ -153,3 +148,33 @@ function changeTitle() {
 }
 
 changeTitle();
+
+const insertTimeToMidnight = () => {
+
+    let midnight = new Date();
+    midnight.setHours(24);
+    midnight.setMinutes(0);
+    midnight.setSeconds(0);
+    midnight.setMilliseconds(0);
+    const millisecondsToMidnight = midnight.getTime() - new Date().getTime();
+
+    const countdown = document.querySelector('#countdown')
+    const secondsTo = millisecondsToMidnight / 1000;
+    const minutesTo = secondsTo / 60;
+    const hoursTo = minutesTo / 60;
+    console.log('time to midnight: ', `${Math.floor(hoursTo)}h : ${minutesTo % 60}m : ${secondsTo % 60}s`)
+    countdown.innerHTML = `${Math.floor(hoursTo)}h : ${minutesTo % 60}m : ${secondsTo % 60}s`
+    // setInterval(() => {
+
+    // }, 1000)
+
+}
+
+
+completedButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    completeTarget();
+    updateChangesAtFrontend();
+    insertTimeToMidnight();
+
+}) 
