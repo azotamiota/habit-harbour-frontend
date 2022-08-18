@@ -150,28 +150,24 @@ h1 {
     margin-bottom: 5px;
 }
 
-
-
+#button-form {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+}
 
 #completed-button {
-    margin-top: 20px;;
-    margin-left: 20px;
-    width: 90%;
+    width: 160px;
     border-radius: 25px;
-    height:40px;
-    background-color:limegreen;
+    height: 40px;
+    background-color: #63b963;
     color: #fff;
     font-weight: 600;
     cursor: pointer;
 }
 
 #completed-button:disabled {
-    margin-left: 20px;
-    width: 90%;
-    border-radius: 25px;
-    height:40px;
     background-color: #e74e35;
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
+    color: #bebebe;
+    cursor: default;
 }
