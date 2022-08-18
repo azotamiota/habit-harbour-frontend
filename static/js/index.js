@@ -36,10 +36,7 @@ function login (data) {
 
     fetch("https://habit-harbour.herokuapp.com/login", options)
     // fetch("http://localhost:3000/login", options)
-        .then(res => {
-            console.log('loader should be visible here')
-            res.json()
-        })
+        .then(res => res.json())
         .then(data => {
             document.querySelector('.loader').style.display = 'none';
             if (data["success"]) {
