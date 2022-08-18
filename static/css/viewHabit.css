@@ -65,7 +65,7 @@
     justify-content: center; 
 }
 
-#newHabit:hover {
+#newHabit:hover, #myHabitBtn:hover {
     transform: translateY(-2px);
 }
 
@@ -125,6 +125,11 @@ h1 {
     cursor: pointer;
     display: inline-block;
     margin: 10px;
+    transition: all 250ms;
+}
+ 
+#waterBtn:hover, #exerciseBtn:hover {
+    transform: translateY(-2px);
 }
 
 #modal {
@@ -170,4 +175,18 @@ h1 {
     background-color: #e74e35;
     color: #bebebe;
     cursor: default;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+#water-cd-container {
+    display: none;
+}
+
+#exercise-cd-container {
+    display: none;
 }

@@ -6,11 +6,16 @@ const modalFrequency = document.querySelector("#hbtFreq");
 const modalStreak = document.querySelector("#hbtStreak");
 
 const buttonForm = document.querySelector('#button-form');
+const waterCountdownContainer = document.querySelector('#water-cd-container')
+const waterCountdown = document.querySelector('#water-countdown')
+const exerciseCountdownContainer = document.querySelector('#exercise-cd-container')
+const exerciseCountdown = document.querySelector('#exercise-countdown')
 
 const completedButton = document.createElement('input')
 completedButton.setAttribute('type', 'submit');
 completedButton.setAttribute('value', 'Target completed!');
 completedButton.setAttribute('id', 'completed-button');
+
 
 function swapNav() {
     const navBar = document.querySelector(".sidebar");
@@ -28,6 +33,10 @@ function swapNav() {
 
 
 const loadWaterHabit = () => {
+    
+    waterCountdownContainer.style.display = 'flex';
+    exerciseCountdownContainer.style.display = 'none'
+
     const tokenData = jwt_decode(localStorage.getItem("token"));
     const user = tokenData.username;
 
@@ -50,6 +59,10 @@ const loadWaterHabit = () => {
 };
 
 const loadExerciseHabit = () => {
+
+    waterCountdownContainer.style.display = 'none';
+    exerciseCountdownContainer.style.display = 'flex';
+
     const tokenData = jwt_decode(localStorage.getItem("token"));
     const user = tokenData.username;
 
@@ -140,6 +153,16 @@ const updateChangesAtFrontend = () => {
     completedButton.disabled = true;
 }
 
+<<<<<<< HEAD
+=======
+completedButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    completeTarget();
+    updateChangesAtFrontend();
+    insertTimeToMidnight();
+
+}) 
+>>>>>>> main
 
 function changeTitle() {
     const tokenData = jwt_decode(localStorage.getItem("token"));
@@ -150,6 +173,7 @@ function changeTitle() {
 changeTitle();
 
 
+<<<<<<< HEAD
 
 
 completedButton.addEventListener('click', (e) => {
@@ -159,3 +183,74 @@ completedButton.addEventListener('click', (e) => {
     insertTimeToMidnight();
 
 }) 
+=======
+const insertTimeToMidnight = () => {
+    const currentHabit = document.querySelector('#hbtTitle').textContent.toLowerCase();
+
+
+    if (currentHabit == 'water') {
+
+        let midnight = new Date();
+        midnight.setHours(24);
+        midnight.setMinutes(0);
+        midnight.setSeconds(0);
+        midnight.setMilliseconds(0);
+        let millisecondsToMidnight = midnight.getTime() - new Date().getTime();
+
+        // const resetLabel = document.querySelector('#reset-label')
+        
+        let secondsTo = millisecondsToMidnight / 1000;
+        let minutesTo = secondsTo / 60;
+        let hoursTo = minutesTo / 60;
+
+        waterCountdown.innerHTML = `${Math.floor(hoursTo)}h : ${Math.floor(minutesTo % 60)}m : ${Math.floor(secondsTo % 60)}s`;
+        setInterval(() => {
+            millisecondsToMidnight -= 1000;
+            secondsTo = millisecondsToMidnight / 1000;
+            minutesTo = secondsTo / 60;
+            hoursTo = minutesTo / 60;
+            waterCountdown.innerHTML = `${Math.floor(hoursTo)}h : ${Math.floor(minutesTo % 60)}m : ${Math.floor(secondsTo % 60)}s`
+        }, 1000)
+
+    } else if (currentHabit == 'exercise') {
+
+        let midnight = new Date();
+        midnight.setHours(24);
+        midnight.setMinutes(0);
+        midnight.setSeconds(0);
+        midnight.setMilliseconds(0);
+        let millisecondsToMidnight = midnight.getTime() - new Date().getTime();
+
+        // const resetLabel = document.querySelector('#reset-label')
+        
+        let secondsTo = millisecondsToMidnight / 1000;
+        let minutesTo = secondsTo / 60;
+        let hoursTo = minutesTo / 60;
+
+        waterCountdownContainer.style.display = 'none';
+        exerciseCountdownContainer.style.display = 'flex'
+        exerciseCountdown.innerHTML = `${Math.floor(hoursTo)}h : ${Math.floor(minutesTo % 60)}m : ${Math.floor(secondsTo % 60)}s`;
+        setInterval(() => {
+            millisecondsToMidnight -= 1000;
+            secondsTo = millisecondsToMidnight / 1000;
+            minutesTo = secondsTo / 60;
+            hoursTo = minutesTo / 60;
+            exerciseCountdown.innerHTML = `${Math.floor(hoursTo)}h : ${Math.floor(minutesTo % 60)}m : ${Math.floor(secondsTo % 60)}s`
+        }, 1000)
+
+        waterCountdownContainer.style.display = 'none';
+        exerciseCountdownContainer.style.display = 'flex'
+        exerciseCountdown.innerHTML = `${Math.floor(hoursTo)}h : ${Math.floor(minutesTo % 60)}m : ${Math.floor(secondsTo % 60)}s`
+    }
+
+
+    setInterval(() => {
+        millisecondsToMidnight -= 1000;
+        secondsTo = millisecondsToMidnight / 1000;
+        minutesTo = secondsTo / 60;
+        hoursTo = minutesTo / 60;
+        waterCountdown.innerHTML = `${Math.floor(hoursTo)}h : ${Math.floor(minutesTo % 60)}m : ${Math.floor(secondsTo % 60)}s`
+    }, 1000)
+
+}
+>>>>>>> main
