@@ -20,6 +20,6 @@ function swapNav() {
 function updateTitle() {
     const tokenData = jwt_decode(localStorage.getItem("token"));
     const user = tokenData.username;
-    document.querySelector("#welcomeTitle").textContent = `Hello ${user}, Welcome to Habit harbour`
+    document.querySelector("#welcomeTitle").textContent = `Hello, ${user}! Welcome to Habit Harbour`
 }
 updateTitle()
