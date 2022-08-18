@@ -14,13 +14,14 @@ completedButton.setAttribute('id', 'completed-button');
 function swapNav() {
     const navBar = document.querySelector(".sidebar");
     const main = document.querySelector("main");
+    const buttonsContainer = document.querySelector('#buttons-container')
     if (navBar.style.width === "100%") {
         navBar.style.width = "25px";
-        // main.style.marginLeft = "30px";
+        buttonsContainer.style.opacity = '0'
 
     } else {
         navBar.style.width = "100%";
-        // main.style.marginLeft= "250px";
+        buttonsContainer.style.opacity = '1'
     }
 }
 
