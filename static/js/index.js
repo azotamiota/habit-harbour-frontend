@@ -55,7 +55,7 @@ function login (data) {
             credMessage.innerHTML = 'Login failed! Please try again.'
                 setTimeout(() => {
                     credMessage.innerHTML = ''
-                }, 3000)
+                }, 5000)
         })
 }
 
@@ -76,6 +76,7 @@ function register (data) {
     // fetch("http://localhost:3000/register", options)
         .then(res => res.json())
         .then(data => {
+            document.querySelector('.loader-reg').style.display = 'none';
             if (data["username"]) {
                 document.querySelector(".popup-reg").classList.remove("active");
                 credMessage.innerHTML = 'Registration successful!<br>Now you can log in'
@@ -83,10 +84,17 @@ function register (data) {
                     credMessage.innerHTML = ''
                 }, 3000)
             } else {
-                alert("Registration unsuccessful, please try again later")
                 throw "Unable to register!"
             }
-        });
+        })
+        .catch(err => {
+            document.querySelector(".popup-reg").classList.remove("active");
+            document.querySelector('.loader-reg').style.display = 'none';
+            credMessage.innerHTML = 'Registration failed! Please try again.'
+                setTimeout(() => {
+                    credMessage.innerHTML = ''
+                }, 3000)
+        })
 }
 
 document.querySelector("#loginForm").addEventListener("submit", (e) => {
@@ -105,7 +113,10 @@ document.querySelector("#loginForm").addEventListener("submit", (e) => {
 })
 
 document.querySelector("#registerForm").addEventListener("submit", (e) => {
+
     e.preventDefault();
+
+    document.querySelector('.loader-reg').style.display = 'flex';
 
     const form = new FormData(e.target);
 
