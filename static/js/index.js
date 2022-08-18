@@ -36,8 +36,12 @@ function login (data) {
 
     fetch("https://habit-harbour.herokuapp.com/login", options)
     // fetch("http://localhost:3000/login", options)
-        .then(res => res.json())
+        .then(res => {
+            console.log('loader should be visible here')
+            res.json()
+        })
         .then(data => {
+            document.querySelector('.loader').style.display = 'none';
             if (data["success"]) {
                 localStorage.setItem("token", data["token"]);
                 window.location.assign("/home.html");
@@ -47,6 +51,7 @@ function login (data) {
         })
         .catch(err => {
             document.querySelector(".popup").classList.remove("active");
+            document.querySelector('.loader').style.display = 'none';
             credMessage.innerHTML = 'Login failed! Please try again.'
                 setTimeout(() => {
                     credMessage.innerHTML = ''
@@ -86,6 +91,8 @@ function register (data) {
 
 document.querySelector("#loginForm").addEventListener("submit", (e) => {
     e.preventDefault();
+            
+    document.querySelector('.loader').style.display = 'flex';
 
     const form = new FormData(e.target);
 
