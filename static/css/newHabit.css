@@ -107,7 +107,7 @@ body {
 
 main {
     position:relative;
-    margin-left: 30px;
+    margin-left: 25px;
     transition: margin-left .5s;
 }
 
@@ -156,8 +156,8 @@ input[type=range]::-webkit-slider-thumb {
 
 #formWrapper {
     background-color: #fff;
-    width: 98%;
-    margin-top: 50px;
+    width: 95%;
+    margin: 50px auto;
     padding: 20px;
     border-radius: 25px;
 }
@@ -192,4 +192,10 @@ input[type=range]::-webkit-slider-thumb {
     background-color: #E74E35;
     color: #fff;
     font-weight: 600;
+    transition: all 250ms;
+}
+
+#habitSub:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
 }
