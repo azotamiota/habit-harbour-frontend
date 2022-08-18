@@ -1,4 +1,3 @@
-const {timeToMidnight} = require('./countdown');
 const modal = document.querySelector("#modal");
 const modalTitle = document.querySelector("#hbtTitle");
 const modalTarget = document.querySelector("#hbtTarget");
@@ -156,8 +155,8 @@ const updateChangesAtFrontend = () => {
 
 completedButton.addEventListener('click', (e) => {
     e.preventDefault();
-    completeTarget();
     updateChangesAtFrontend();
+    completeTarget();
     insertTimeToMidnight();
 
 }) 
@@ -201,6 +200,8 @@ const insertTimeToMidnight = () => {
         let minutesTo = secondsTo / 60;
         let hoursTo = minutesTo / 60;
 
+        waterCountdownContainer.style.display = 'flex';
+        exerciseCountdownContainer.style.display = 'none'
         waterCountdown.innerHTML = `${Math.floor(hoursTo)}h : ${Math.floor(minutesTo % 60)}m : ${Math.floor(secondsTo % 60)}s`;
         setInterval(() => {
             millisecondsToMidnight -= 1000;
@@ -236,18 +237,5 @@ const insertTimeToMidnight = () => {
             exerciseCountdown.innerHTML = `${Math.floor(hoursTo)}h : ${Math.floor(minutesTo % 60)}m : ${Math.floor(secondsTo % 60)}s`
         }, 1000)
 
-        waterCountdownContainer.style.display = 'none';
-        exerciseCountdownContainer.style.display = 'flex'
-        exerciseCountdown.innerHTML = `${Math.floor(hoursTo)}h : ${Math.floor(minutesTo % 60)}m : ${Math.floor(secondsTo % 60)}s`
     }
-
-
-    setInterval(() => {
-        millisecondsToMidnight -= 1000;
-        secondsTo = millisecondsToMidnight / 1000;
-        minutesTo = secondsTo / 60;
-        hoursTo = minutesTo / 60;
-        waterCountdown.innerHTML = `${Math.floor(hoursTo)}h : ${Math.floor(minutesTo % 60)}m : ${Math.floor(secondsTo % 60)}s`
-    }, 1000)
-
 }
