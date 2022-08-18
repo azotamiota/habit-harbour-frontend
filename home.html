@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./static/css/home.css">
-    <script src="./static/js/home.js"></script>
+    <script src="./static/js/home.js" defer></script>
     <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/jwt-decode@1.5.1/build/jwt-decode.min.js'></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Montserrat:wght@300&family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
@@ -29,7 +30,7 @@
     </div>
     <!-- CONTENT -->
     <main> 
-        <h1>Welcome to Habit Harbour</h1>
+        <h1 id="welcomeTitle">Welcome to Habit Harbour</h1>
         <div class="divider"></div>
         <h2> To begin your journey please use the navigation bar to track a new habit or check your progress on a current habit.</h2>
         <div class="divider"></div>

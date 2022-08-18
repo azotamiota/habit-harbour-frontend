@@ -64,7 +64,7 @@ function register (data) {
         .then(res => res.json())
         .then(data => {
             if (data["username"]) {
-                alert("Registration successful, please login")
+                window.confirm("Registration successful, please login")
                 window.location.assign("/index.html");
             } else {
                 alert("Registration unsuccessful, please try again later")

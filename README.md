@@ -36,12 +36,6 @@ The front end of Habit harbour does not require any dependencies.
 11. Click either the water or the exercise bade to view your information
 12. Once you have completed your target for the day click the target completed! button
 
-For anymore information please see the GIFS below.
-
-## Usage GIF's
-
-<!-- to do  -->
-
 ## Build process
 
 When bulding the frontend the first thing we did was create the login page with the pop ups for each form. We then moved on to creating the basic layout and css for each of the individual pages. After we had the structure of the pages we went back and including the links between pages to ensure you could easily navigate around the website. Following on from this we started to connect the frontend to the backend via fetch requests to the available routes in the backend.
