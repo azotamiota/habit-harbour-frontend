@@ -125,6 +125,11 @@ h1 {
     cursor: pointer;
     display: inline-block;
     margin: 10px;
+    transition: all 250ms;
+}
+ 
+#waterBtn:hover, #exerciseBtn:hover {
+    transform: translateY(-2px);
 }
 
 #modal {
