@@ -24,12 +24,9 @@ body {
 }
 
 .center {
-    /* position: absolute;
-    top: 50%;
-    left: 50%; */
     display: flex;
     justify-content: center;
-    margin-left: 40px;
+    margin: 0 auto;
 }
 
 .center button {
@@ -207,4 +204,10 @@ body {
     border-radius: 10px;
     cursor: pointer;
 
+}
+
+#cred-msg {
+    text-align: center;
+    color: white;
+    padding: 10px;
 }
