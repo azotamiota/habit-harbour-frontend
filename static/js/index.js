@@ -1,3 +1,5 @@
+const credMessage = document.querySelector('#cred-msg')
+
 //Function to show login popup
 document.getElementById("show-login").addEventListener("click",function () {
     document.querySelector(".popup").classList.add("active");
@@ -43,7 +45,13 @@ function login (data) {
                 throw "Unable to authenticate!"
             }
         })
-        .catch(err => alert ("Login failed!"))
+        .catch(err => {
+            document.querySelector(".popup").classList.remove("active");
+            credMessage.innerHTML = 'Login failed! Please try again.'
+                setTimeout(() => {
+                    credMessage.innerHTML = ''
+                }, 3000)
+        })
 }
 
 
@@ -64,8 +72,11 @@ function register (data) {
         .then(res => res.json())
         .then(data => {
             if (data["username"]) {
-                window.confirm("Registration successful, please login")
-                window.location.assign("/index.html");
+                document.querySelector(".popup-reg").classList.remove("active");
+                credMessage.innerHTML = 'Registration successful!<br>Now you can log in'
+                setTimeout(() => {
+                    credMessage.innerHTML = ''
+                }, 3000)
             } else {
                 alert("Registration unsuccessful, please try again later")
                 throw "Unable to register!"

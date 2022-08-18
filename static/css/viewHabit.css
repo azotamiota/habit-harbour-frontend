@@ -17,6 +17,7 @@
     background: #E74E35;
     overflow: hidden;
     transition: all 300ms ease-in-out;
+    z-index: 99;
 }
 
 .sidebar.close {
@@ -24,27 +25,33 @@
 }
 
 .sidebar .wrapper {
-    width: 250px;
-    height: 100%;
+    /* width: 250px;
+    height: 100%; */
+}
+
+#buttons-container {
+    opacity: 0;
 }
 
 #logo {
-    width: 250px;
-    height: 250px;
-    margin-bottom: 20px;
-    padding: 20px 0px
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 250px;
+    height: auto;
 }
 
 #newHabit, #myHabitBtn {
     display: flex;
     align-items: center;
-    margin: 8px 0px;
-    margin-left: 1.5em;
+    margin: 10px auto;
+    /* margin-left: 1.5em; */
     padding: 15px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 25px;
-    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-shadow: rgb(213 217 217 / 50%) 0 2px 5px 0;
     box-sizing: border-box;
     color: #0f1111;
     cursor: pointer;
@@ -55,8 +62,7 @@
     height: 50px;
     text-align: center !important;
     line-height: 50px;
-    justify-content: center;
-   
+    justify-content: center; 
 }
 
 #newHabit:hover {
@@ -83,12 +89,13 @@ li {
 
 #closeNav {
     position: absolute;
-    top: 2%;
+    top: 2.5%;
     right: 0;
     transform: translateY(-50%);
     background-color: transparent;
     border: none;
     cursor: pointer;
+    z-index: 100;
 }
 
 /* Page styling */

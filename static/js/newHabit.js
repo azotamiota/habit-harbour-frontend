@@ -3,13 +3,14 @@
 function swapNav() {
     const navBar = document.querySelector(".sidebar");
     const main = document.querySelector("main");
-    if (navBar.style.width === "250px") {
+    const buttonsContainer = document.querySelector('#buttons-container')
+    if (navBar.style.width === "100%") {
         navBar.style.width = "25px";
-        main.style.marginLeft = "30px";
+        buttonsContainer.style.opacity = '0'
 
     } else {
-        navBar.style.width = "250px";
-        main.style.marginLeft= "250px";
+        navBar.style.width = "100%";
+        buttonsContainer.style.opacity = '1'
     }
 }
 
