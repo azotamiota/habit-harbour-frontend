@@ -122,10 +122,6 @@ const completeTarget = () => {
 
     const currentHabit = document.querySelector('#hbtTitle').textContent.toLowerCase();
 
-    console.log('body looks like what I send from here: ',  "username" , user,
-            "habit" , currentHabit,
-            "completed", 'true')
-
     const options = {
         method: 'POST', 
         mode: 'cors', 
@@ -153,15 +149,6 @@ const updateChangesAtFrontend = () => {
 }
 
 
-completedButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    updateChangesAtFrontend();
-    completeTarget();
-    insertTimeToMidnight();
-
-}) 
-
-
 function changeTitle() {
     const tokenData = jwt_decode(localStorage.getItem("token"));
     const user = tokenData.username;
@@ -169,9 +156,6 @@ function changeTitle() {
 }
 
 changeTitle();
-
-
-
 
 completedButton.addEventListener('click', (e) => {
     e.preventDefault();
@@ -183,7 +167,6 @@ completedButton.addEventListener('click', (e) => {
 
 const insertTimeToMidnight = () => {
     const currentHabit = document.querySelector('#hbtTitle').textContent.toLowerCase();
-
 
     if (currentHabit == 'water') {
 
