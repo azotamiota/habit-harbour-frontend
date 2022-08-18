@@ -144,3 +144,11 @@ completedButton.addEventListener('click', (e) => {
     updateChangesAtFrontend();
 
 }) 
+
+function changeTitle() {
+    const tokenData = jwt_decode(localStorage.getItem("token"));
+    const user = tokenData.username;
+    document.querySelector("#vHabitsTitle").textContent =`${user}'s habits`
+}
+
+changeTitle();
