@@ -17,6 +17,7 @@
     background: #E74E35;
     overflow: hidden;
     transition: all 300ms ease-in-out;
+    z-index: 99;
 }
 
 .sidebar.close {
