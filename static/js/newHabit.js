@@ -66,5 +66,3 @@ document.querySelector("#trackHabit").addEventListener("submit", (e) => {
 
     e.target.reset();
 })
-
-

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --verbose",
-    "cov": "jest --coverage"
+    "test": "jest --env=jsdom --watchAll --verbose",
+    "cov": "jest --env=jsdom --coverage"
   },
   "repository": {
     "type": "git",

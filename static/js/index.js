@@ -99,8 +99,7 @@ document.querySelector("#registerForm").addEventListener("submit", (e) => {
     e.target.reset();
 })
 
-
 module.exports = {
     login: login,
-    register: register
+    register: register,
 }
