@@ -17,6 +17,7 @@
     background: #E74E35;
     overflow: hidden;
     transition: all 300ms ease-in-out;
+    z-index: 99;
 }
 
 .sidebar.close {
@@ -83,7 +84,7 @@ li {
 
 #closeNav {
     position: absolute;
-    top: 2%;
+    top: 2.5%;
     right: 0;
     transform: translateY(-50%);
     background-color: transparent;
