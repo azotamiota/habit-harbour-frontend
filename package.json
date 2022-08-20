@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start" : "heroku open ./index.html",
+    "start" : "open ./index.html",
     "test": "jest --env=jsdom --watchAll --verbose",
     "cov": "jest --env=jsdom --coverage"
   },
