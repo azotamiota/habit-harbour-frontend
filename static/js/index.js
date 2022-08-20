@@ -1,4 +1,4 @@
-
+const devMessage = document.querySelector('#dev-msg')
 const credMessage = document.querySelector('#cred-msg')
 
 //Function to show login popup
@@ -128,7 +128,9 @@ document.querySelector("#registerForm").addEventListener("submit", (e) => {
 
 const evaluateScreenSize = () => {
     if (window.innerWidth > 426) {
-        window.location.assign('../../development.html')
+        devMessage.style.display = 'block';
+    } else {
+        devMessage.style.display = 'none';
     }
 }
 
