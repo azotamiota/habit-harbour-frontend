@@ -1,22 +1,23 @@
 {
-  "name": "habit_harbour_front_end",
+  "name": "habit-harbour-frontend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start" : "heroku open ./index.html",
     "test": "jest --env=jsdom --watchAll --verbose",
     "cov": "jest --env=jsdom --coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mike-Mercieca/habit_harbour_front_end.git"
+    "url": "git+https://github.com/azotamiota/habit-harbour-frontend.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Mike-Mercieca/habit_harbour_front_end/issues"
+    "url": "https://github.com/azotamiota/habit-harbour-frontend/issues"
   },
-  "homepage": "https://github.com/Mike-Mercieca/habit_harbour_front_end#readme",
+  "homepage": "https://github.com/azotamiota/habit-harbour-frontend#readme",
   "devDependencies": {
     "jest": "^28.1.3",
     "jest-each": "^28.1.3",

@@ -1,3 +1,4 @@
+
 const credMessage = document.querySelector('#cred-msg')
 
 //Function to show login popup
@@ -124,6 +125,11 @@ document.querySelector("#registerForm").addEventListener("submit", (e) => {
 
     e.target.reset();
 })
+console.log('innerWidth: ', window.innerWidth);
+if (window.innerWidth > 426) {
+    console.log('too large screen');
+    window.location.assign('../../development.html')
+}
 
 module.exports = {
     login: login,
