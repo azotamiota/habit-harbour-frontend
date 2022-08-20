@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "open-cli ./index.html",
+    "start": "open-cli index.html",
     "test": "jest --env=jsdom --watchAll --verbose",
     "cov": "jest --env=jsdom --coverage"
   },
