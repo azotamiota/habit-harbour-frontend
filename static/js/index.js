@@ -125,11 +125,19 @@ document.querySelector("#registerForm").addEventListener("submit", (e) => {
 
     e.target.reset();
 })
-console.log('innerWidth: ', window.innerWidth);
-if (window.innerWidth > 426) {
-    console.log('too large screen');
-    window.location.assign('../../development.html')
+
+const redirectIfNotMobile = () => {
+    if (window.innerWidth > 426) {
+        console.log('too large screen');
+        window.location.assign('../../development.html')
+    }
 }
+
+window.addEventListener('resize', (e) => {
+    redirectIfNotMobile();
+})
+
+redirectIfNotMobile();
 
 module.exports = {
     login: login,
