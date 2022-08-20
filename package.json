@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "url" : "https://habitharbour.netlify.app/index.html",
   "scripts": {
     "test": "jest --env=jsdom --watchAll --verbose",
     "cov": "jest --env=jsdom --coverage"
