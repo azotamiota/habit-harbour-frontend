@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "open ./index.html",
+    "start": "open-cli ./index.html",
     "test": "jest --env=jsdom --watchAll --verbose",
     "cov": "jest --env=jsdom --coverage"
   },
@@ -21,6 +21,7 @@
   "devDependencies": {
     "jest": "^28.1.3",
     "jest-each": "^28.1.3",
-    "jest-environment-jsdom": "^28.1.3"
+    "jest-environment-jsdom": "^28.1.3",
+    "open-cli": "^7.0.1"
   }
 }
