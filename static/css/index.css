@@ -109,6 +109,7 @@ body {
     transition: top 0ms ease-in-out 200ms,
                 opacity 200ms ease-in-out 0ms,
                 transform 200ms ease-in-out 0ms;
+    z-index: 99;
 
 }
 
@@ -192,6 +193,7 @@ body {
     transition: top 0ms ease-in-out 200ms,
                 opacity 200ms ease-in-out 0ms,
                 transform 200ms ease-in-out 0ms;
+    z-index: 99;
 
 }
 
