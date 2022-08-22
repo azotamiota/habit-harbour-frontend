@@ -1,3 +1,9 @@
+// Check if user logged in 
+if(!localStorage.getItem("token")) {
+    window.location.assign('../index.html')
+}
+
+const logoutButton = document.querySelector('#logout-btn')
 
 // Function to control navBar
 function swapNav() {
@@ -66,4 +72,8 @@ document.querySelector("#trackHabit").addEventListener("submit", (e) => {
     })
 
     e.target.reset();
+})
+
+logoutButton.addEventListener('click', () => {
+    localStorage.clear()
 })

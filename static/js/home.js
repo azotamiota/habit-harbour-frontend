@@ -1,3 +1,9 @@
+// Check if user logged in 
+if(!localStorage.getItem("token")) {
+    window.location.assign('../index.html')
+}
+
+const logoutButton = document.querySelector('#logout-btn')
 const tokenData = jwt_decode(localStorage.getItem("token"));
 const user = tokenData.username;
 
@@ -23,3 +29,7 @@ function updateTitle() {
     document.querySelector("#welcomeTitle").textContent = `Hello, ${user}! Welcome to Habit Harbour`
 }
 updateTitle()
+
+logoutButton.addEventListener('click', () => {
+    localStorage.clear()
+})

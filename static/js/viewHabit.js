@@ -1,3 +1,8 @@
+// Check if user logged in 
+if(!localStorage.getItem("token")) {
+    window.location.assign('../index.html')
+}
+
 const modal = document.querySelector("#modal");
 const modalTitle = document.querySelector("#hbtTitle");
 const modalTarget = document.querySelector("#hbtTarget");
@@ -14,6 +19,8 @@ const completedButton = document.createElement('input')
 completedButton.setAttribute('type', 'submit');
 completedButton.setAttribute('value', 'Target completed!');
 completedButton.setAttribute('id', 'completed-button');
+const logoutButton = document.querySelector('#logout-btn')
+
 
 
 function swapNav() {
@@ -32,10 +39,12 @@ function swapNav() {
 
 
 const loadWaterHabit = () => {
-    
+   
     waterCountdownContainer.style.display = 'flex';
     exerciseCountdownContainer.style.display = 'none'
 
+    console.log('tokenData: ', localStorage.getItem("token"))
+    
     const tokenData = jwt_decode(localStorage.getItem("token"));
     const user = tokenData.username;
 
@@ -222,3 +231,7 @@ const insertTimeToMidnight = () => {
 
     }
 }
+
+logoutButton.addEventListener('click', () => {
+    localStorage.clear()
+})
