@@ -1,7 +1,6 @@
 # Lap 2 project: Habit harbour
-## Front end 
 
-## Badges
+## For backend code click (here)[https://github.com/azotamiota/habit-harbour-backend].
 
 # Product Information
 
